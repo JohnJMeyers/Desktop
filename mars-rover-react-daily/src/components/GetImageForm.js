@@ -41,58 +41,32 @@ export default class GetImageForm extends Component {
 
   handleSubmit(event){
     event.preventDefault()
-    fetch('https://api.nasa.gov/planetary/apod?api_key=2bNLMbFSW9EIl0V0hhjJfw4jDbbngnQLfI5ZphXJ')
-      .then(results => results.json())
-        .then(Data => {
-          this.setState({
-            camera: this.state.camera,
-            rover: this.state.rover,
-            sol: this.state.sol
-          });
-          console.log("STATE!!!!!", this.state)
-          let cam = this.state.camera;
-          let rove = this.state.rover;
-          let num = this.state.sol;
 
-          let imageUrl = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rove}/photos?sol=${num}&camera=${cam}&api_key=${API_KEY}`
-          fetch(imageUrl)
-          .then(res => res.json())
-            .then(Data => {
-              console.log(Data.photos)
-              this.setState({images: Data.photos})
-              })
-        })
+    this.setState({
+      camera: this.state.camera,
+      rover: this.state.rover,
+      sol: this.state.sol
+    });
+
+    let cam = this.state.camera;
+    let rove = this.state.rover;
+    let num = this.state.sol;
+
+    let imageUrl = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rove}/photos?sol=${num}&camera=${cam}&api_key=${API_KEY}`
+    fetch(imageUrl)
+    .then(res => res.json())
+      .then(Data => {
+        console.log(Data.photos)
+        this.setState({images: Data.photos})
+      })
   }
 
-//   componentDidMount() {
-//   fetch(API_KEY)
-//   .then(results => results.json())
-//     .then(Data => {
-//       this.setState({
-//         camera: this.state.camera,
-//         rover: this.state.rover,
-//         sol: this.state.sol
-//       });
-//       console.log(this.state)
-//       let cam = this.state.camera;
-//       let rove = this.state.rover;
-//       let num = this.state.sol;
-//
-//       let imageUrl = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rove}/photos?sol=${num}&camera=${cam}&api_key=${API_KEY}`;
-//     })
-// }
-
-componentDidMount() {
-  fetch('https://api.nasa.gov/planetary/apod?api_key=2bNLMbFSW9EIl0V0hhjJfw4jDbbngnQLfI5ZphXJ')
-  .then(results => results.json())
-    .then(Data => {
-      console.log(Data)
-      this.setState({
-
-      });
-      console.log(this.state)
-    })
-}
+  componentDidMount() {
+    fetch('https://api.nasa.gov/planetary/apod?api_key=2bNLMbFSW9EIl0V0hhjJfw4jDbbngnQLfI5ZphXJ')
+    .then(results => results.json())
+      .then(Data => {
+      })
+  }
 
   render() {
 
@@ -115,20 +89,7 @@ componentDidMount() {
           <input type="number" onChange={this.handleSol} max="2000" min="1000" value={this.state.sol}/>
           <GetImageButton />
         </form>
-        
         <ImageDisplay images={this.state.images} />
-
-        {/* {this.props.children} */}
-        <div>
-
-          {/* {
-            this.state.images.map ((picture) =>
-          <div className="Nasa pics"key={picture.id}>
-            <img>{picture.img_src}</img>
-          </div>
-        )} */}
-
-        </div>
       </div>
     )
   }

@@ -24,6 +24,32 @@
 }
 
 .pictures {
-  height: 200px;
-  width: 200px;
+  height: 400px;
+  width: 350px;
+  margin: 1%;
+}
+
+.NasaPics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  margin-bottom: 2em;
+}
+
+label {
+  font-weight: bolder;
+  font-size: 1.5em;
+  margin: 1%;
+}
+
+.submit {
+  margin-left: 1em;
+  font-size: 110%;
+  background-color: #2ecc71;
+  color: white;
+  border-radius: 4px;
+  border: 0;
 }
