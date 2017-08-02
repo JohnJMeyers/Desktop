@@ -12,17 +12,17 @@ import ShowPost from './ShowPost'
 class App extends Component {
   render() {
     return (
-        <BrowserRouter>
-            <BaseLayout>
-              <Switch>
-                <Route path="/create" component={CreatePost} />
-                <Route path="/show/:id" component={ShowPost}/>
-                <Route path="/show" component={PostList} />
-                <Route path="/" component={Home} />
-              </Switch>
-            </BaseLayout>
-        </BrowserRouter>
-    );
+      <BrowserRouter>
+          <BaseLayout>
+            <Switch>
+              <Route path="/create" component={CreatePost} />
+              <Route path="/show/:id" component={ShowPost} />
+              <Route path="/show" component={PostList} />
+              <Route path="/" component={Home} />
+            </Switch>
+          </BaseLayout>
+      </BrowserRouter>
+    )
   }
 }
 

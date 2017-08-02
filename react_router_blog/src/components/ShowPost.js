@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-
-// import ShowPost from './ShowPost'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class ShowPost extends Component {
 
@@ -12,27 +10,22 @@ class ShowPost extends Component {
     this.state = {
       single: []
     }
-
-
   }
-
 
   componentDidMount(){
-    const { id } = this.props.match.params;
-    const URL = `https://tiny-lasagna-server.herokuapp.com/collections/blogger/${id}`;
-    // Fetch data from API
-    fetch(URL).then((response) => {
-      return response.json();
-    }).then((data) => {
-      console.log('dataaaaaaaaaaaa', data)
-      this.setState({single: data})
 
-    });
+    const { id } = this.props.match.params
+    const URL = `https://tiny-lasagna-server.herokuapp.com/collections/blogger/${id}`
+
+    fetch(URL).then((response) => {
+      return response.json()
+    })
+    .then((data) => {
+      this.setState({single: data})
+    })
   }
 
-
   render() {
-
 
     return (
 
@@ -45,6 +38,7 @@ class ShowPost extends Component {
         <div className="card  key-div cards jumbotron" style={{borderColor: '#333;'}}>
 
           <div className="container test">
+
             <div className="top">
               <div className="cardBlock container">
                 <h4 className="cardTitle">Title:</h4>
@@ -55,27 +49,19 @@ class ShowPost extends Component {
                 <p className="cardText">{this.state.single.title}</p>
               </div>
             </div>
+
             <div className="cardBlock container bottom">
               <h4 className="cardTitle">Blog:</h4>
               <p className="cardText blogText">{this.state.single.blog}</p>
             </div>
 
           </div>
+
         </div>
 
       </div>
-
-      // <div>
-      //   <Link className="btn btn-large btn-danger" to="/show">Back To Blogs</Link>
-      //
-      //   <p>{this.state.single.name}</p>
-      //   <p>{this.state.single.title}</p>
-      //   <p>{this.state.single.blog}</p>
-      //
-      // </div>
-    );
+    )
   }
-
 }
 
-export default ShowPost;
+export default ShowPost

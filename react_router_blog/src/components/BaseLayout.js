@@ -4,6 +4,7 @@ import {NavLink} from 'react-router-dom'
 class BaseLayout extends Component {
 
   render() {
+
     return (
       <div className="container-fluid">
 
@@ -13,14 +14,11 @@ class BaseLayout extends Component {
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          <NavLink activeStyle={{color: "#5cb85c"}} className="navbar-brand active" to="/">Hog <img className="img-fluid" src="http://www.clipartlord.com/wp-content/uploads/2015/01/pig-face2.png"></img>Blog</NavLink>
+          <NavLink activeStyle={{color: "#5cb85c"}} className="navbar-brand active" to="/">Hog <img alt="" className="img-fluid" src="http://www.clipartlord.com/wp-content/uploads/2015/01/pig-face2.png"></img>Blog</NavLink>
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
 
             <ul className="navbar-nav mr-auto">
-              {/* <li className="nav-item">
-                <NavLink activeClassName="selected" className="nav-link" to="/">Home<span className="sr-only">(current)</span></NavLink>
-              </li> */}
               <li className="nav-item">
                 <NavLink activeClassName="selected" className="nav-link" to="/create">Create Post</NavLink>
               </li>
@@ -47,9 +45,8 @@ class BaseLayout extends Component {
         </footer>
 
       </div>
-    );
+    )
   }
-
 }
 
 export default BaseLayout;
