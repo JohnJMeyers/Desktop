@@ -13,7 +13,6 @@ export default class Home extends Component {
       blog: ""
     }
   }
-
   componentDidMount(){
 
     let url ="https://tiny-lasagna-server.herokuapp.com/collections/blogger/"
@@ -37,7 +36,7 @@ export default class Home extends Component {
 
         <h1 className="container-fluid latest-blog"> Latest Blog </h1>
 
-        <div className="card  key-div cards jumbotron" style={{borderColor: '#333;'}}>
+        <div className="card  key-div cards jumbotron" style={{borderColor: '#333'}}>
 
           <div className="container test">
 
