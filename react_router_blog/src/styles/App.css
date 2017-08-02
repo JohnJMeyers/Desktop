@@ -35,3 +35,7 @@
 .nav-link {
   font-size: 24px;
 }
+
+.children {
+  padding: 0;
+}

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import ShowPost from './ShowPost'
 
-class data extends Component {
+class Data extends Component {
 
   constructor(props) {
 
@@ -49,4 +49,4 @@ class data extends Component {
 
 }
 
-export default data;
+export default Data;

@@ -7,8 +7,7 @@ import BaseLayout from './BaseLayout';
 import CreatePost from './CreatePost';
 import PostList from './PostList';
 import ShowPost from './ShowPost';
-import ShowPostId from './ShowPost';
-import data from './data'
+import Data from './Data'
 
 class App extends Component {
   render() {
@@ -17,7 +16,7 @@ class App extends Component {
             <BaseLayout>
               <Switch>
                 <Route path="/create" component={CreatePost} />
-                <Route path="/show/:id" component={data}/>
+                <Route path="/show/:id" component={Data}/>
                 <Route path="/show" component={ShowPost} />
                 <Route path="/" component={PostList} />
               </Switch>

@@ -38,9 +38,6 @@ export default class PostList extends Component {
 
   render() {
 
-    // console.log('this.state.hogs[0].name',this.state.hogs[0])
-
-
     return (
       <div className="jumbotron">
 

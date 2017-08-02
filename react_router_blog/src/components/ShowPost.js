@@ -2,17 +2,6 @@ import React, { Component } from 'react';
 import {NavLink, Link} from 'react-router-dom'
 
 
-
-// class ShowPostId extends Component {
-//
-//
-//
-//
-// }
-
-
-
-
 class ShowPost extends Component {
 
   constructor(props) {
@@ -22,10 +11,7 @@ class ShowPost extends Component {
     this.state = {
       hogs: []
     }
-
-
   }
-
 
   componentDidMount(){
     let url ="https://tiny-lasagna-server.herokuapp.com/collections/blogger/";
@@ -35,7 +21,6 @@ class ShowPost extends Component {
     }).then((data) => {
       console.log('data', data)
       this.setState({hogs: data})
-
     });
   }
 
@@ -43,13 +28,10 @@ class ShowPost extends Component {
   render() {
 
     let match = this.props.match;
-    console.log('match',match)
-    // const { id } = this.props.match.params;
-    // const URL = `https://tiny-lasagna-server.herokuapp.com/collections/blogger/${id}`;
 
     let blogs = this.state.hogs.map((blogs)=>{
       return (
-        <div key={blogs._id} className={blogs.title}>
+        <div key={blogs._id} className="container">
           <NavLink activeClassName="selected" className="navlink" to={`${match.url}/${blogs._id}`}>{blogs.title}</NavLink>
         </div>
     )});
@@ -57,9 +39,14 @@ class ShowPost extends Component {
     return (
 
 
-      <div className="pictures">
+      <div className="container-fluid jumbotron">
+
         <Link className="btn btn-large btn-primary" to="/">Back To Home</Link>
-        {blogs}
+
+        <div className="cardBlock jumbotron container">
+          <p className="cardText cardTitle">{blogs}</p>
+        </div>
+
       </div>
 
 

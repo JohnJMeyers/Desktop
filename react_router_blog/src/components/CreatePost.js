@@ -17,8 +17,6 @@ class CreatePost extends Component {
     this.handleBlog = this.handleBlog.bind(this)
   }
 
-
-
   handleName(event){
     this.setState({name: event.target.value})
     console.log('yo')
@@ -33,7 +31,6 @@ class CreatePost extends Component {
     this.setState({blog: event.target.value})
     console.log('yo')
   }
-
 
   addToList = (e) => {
       e.preventDefault();
@@ -57,12 +54,9 @@ class CreatePost extends Component {
     this.setState({blog: '', name: '', title: ''});
   }
 
-
-
-
   render() {
     return (
-      <div >
+      <div className="container-fluid jumbotron">
           <form className="form-group my-2 my-lg-0" onSubmit={this.addToList}>
             <div className="form-group col-4">
               <label htmlFor="formGroupExampleInput"> Name: </label>

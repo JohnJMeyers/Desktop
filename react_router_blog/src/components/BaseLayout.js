@@ -3,10 +3,6 @@ import {NavLink} from 'react-router-dom'
 
 class BaseLayout extends Component {
 
-
-
-
-
   render() {
     return (
       <div className="container-fluid">
@@ -22,9 +18,9 @@ class BaseLayout extends Component {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
 
             <ul className="navbar-nav mr-auto">
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <NavLink activeClassName="selected" className="nav-link" to="/">Home<span className="sr-only">(current)</span></NavLink>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <NavLink activeClassName="selected" className="nav-link" to="/create">Create Post</NavLink>
               </li>
@@ -42,12 +38,12 @@ class BaseLayout extends Component {
 
         </nav>
 
-        <div>
+        <div className="container-fluid children">
         {this.props.children}
         </div>
 
         <footer>
-          Footer
+          [This is where the footer will go]
         </footer>
 
       </div>
