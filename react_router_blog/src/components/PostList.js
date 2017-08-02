@@ -48,7 +48,7 @@ class PostList extends Component {
         <Link className="btn btn-large btn-primary" to="/">Back To Home</Link>
 
         <div className="container-fluid jumbotron show-jumbo">
-          <p className="cardText cardTitle blogTitle blog-card">{blogs}</p>
+          <div className="cardText cardTitle blogTitle blog-card">{blogs}</div>
         </div>
 
       </div>

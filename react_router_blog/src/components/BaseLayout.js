@@ -40,10 +40,6 @@ class BaseLayout extends Component {
         {this.props.children}
         </div>
 
-        <footer>
-          [This is where the footer will go]
-        </footer>
-
       </div>
     )
   }

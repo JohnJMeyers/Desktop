@@ -35,7 +35,7 @@ class ShowPost extends Component {
 
         <Link className="btn btn-large btn-danger" to="/show">Back To Blogs</Link>
 
-        <div className="card  key-div cards jumbotron" style={{borderColor: '#333;'}}>
+        <div className="card  key-div cards jumbotron" style={{borderColor: '#333'}}>
 
           <div className="container test">
 
