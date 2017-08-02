@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {NavLink, Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
+// import ShowPost from './ShowPost'
 
 class ShowPost extends Component {
 
@@ -9,64 +10,70 @@ class ShowPost extends Component {
     super(props)
 
     this.state = {
-      hogs: []
+      single: []
     }
+
+
   }
 
+
   componentDidMount(){
-    let url ="https://tiny-lasagna-server.herokuapp.com/collections/blogger/";
+    const { id } = this.props.match.params;
+    const URL = `https://tiny-lasagna-server.herokuapp.com/collections/blogger/${id}`;
     // Fetch data from API
-    fetch(url).then((response) => {
+    fetch(URL).then((response) => {
       return response.json();
     }).then((data) => {
-      console.log('data', data)
-      this.setState({hogs: data})
+      console.log('dataaaaaaaaaaaa', data)
+      this.setState({single: data})
+
     });
   }
 
 
   render() {
 
-    let match = this.props.match;
-
-    let blogs = this.state.hogs.map((blogs)=>{
-      return (
-        // <div key={blogs._id} className="container">
-          <ul key={blogs._id} className="list-group">
-            <li id="show-list" className="list-group-item">
-
-              <NavLink activeClassName="selected" className="navlink" to={`${match.url}/${blogs._id}`}>{blogs.title}</NavLink>
-            </li>
-          </ul>
-        // </div>
-    )});
 
     return (
 
       <div className="container-fluid">
 
-        <h1 className="container-fluid latest-blog"> All Blogs </h1>
-        <Link className="btn btn-large btn-primary" to="/">Back To Home</Link>
-        <div className="container-fluid jumbotron show-jumbo">
+        <h1 className="container-fluid latest-blog"> Selected Blog </h1>
 
+        <Link className="btn btn-large btn-danger" to="/show">Back To Blogs</Link>
 
-          {/* <div className="cardBlock jumbotron container"> */}
-            <p className="cardText cardTitle blogTitle blog-card">{blogs}</p>
-          {/* </div> */}
+        <div className="card  key-div cards jumbotron" style={{borderColor: '#333;'}}>
 
-          {/* <ul>
-            <li>
+          <div className="container test">
+            <div className="top">
+              <div className="cardBlock container">
+                <h4 className="cardTitle">Title:</h4>
+                <p className="cardText">{this.state.single.name}</p>
+              </div>
+              <div className="cardBlock container">
+                <h4 className="cardTitle">Author:</h4>
+                <p className="cardText">{this.state.single.title}</p>
+              </div>
+            </div>
+            <div className="cardBlock container bottom">
+              <h4 className="cardTitle">Blog:</h4>
+              <p className="cardText blogText">{this.state.single.blog}</p>
+            </div>
 
-            </li>
-          </ul> */}
-
-
+          </div>
         </div>
+
       </div>
 
-
-
-    )
+      // <div>
+      //   <Link className="btn btn-large btn-danger" to="/show">Back To Blogs</Link>
+      //
+      //   <p>{this.state.single.name}</p>
+      //   <p>{this.state.single.title}</p>
+      //   <p>{this.state.single.blog}</p>
+      //
+      // </div>
+    );
   }
 
 }

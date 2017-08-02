@@ -5,9 +5,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import BaseLayout from './BaseLayout';
 import CreatePost from './CreatePost';
+import Home from './Home';
 import PostList from './PostList';
-import ShowPost from './ShowPost';
-import Data from './Data'
+import ShowPost from './ShowPost'
 
 class App extends Component {
   render() {
@@ -16,9 +16,9 @@ class App extends Component {
             <BaseLayout>
               <Switch>
                 <Route path="/create" component={CreatePost} />
-                <Route path="/show/:id" component={Data}/>
-                <Route path="/show" component={ShowPost} />
-                <Route path="/" component={PostList} />
+                <Route path="/show/:id" component={ShowPost}/>
+                <Route path="/show" component={PostList} />
+                <Route path="/" component={Home} />
               </Switch>
             </BaseLayout>
         </BrowserRouter>
