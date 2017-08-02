@@ -31,24 +31,38 @@ class ShowPost extends Component {
 
     let blogs = this.state.hogs.map((blogs)=>{
       return (
-        <div key={blogs._id} className="container">
-          <NavLink activeClassName="selected" className="navlink" to={`${match.url}/${blogs._id}`}>{blogs.title}</NavLink>
-        </div>
+        // <div key={blogs._id} className="container">
+          <ul key={blogs._id} className="list-group">
+            <li id="show-list" className="list-group-item">
+
+              <NavLink activeClassName="selected" className="navlink" to={`${match.url}/${blogs._id}`}>{blogs.title}</NavLink>
+            </li>
+          </ul>
+        // </div>
     )});
 
     return (
 
+      <div className="container-fluid">
 
-      <div className="container-fluid jumbotron">
-
+        <h1 className="container-fluid latest-blog"> All Blogs </h1>
         <Link className="btn btn-large btn-primary" to="/">Back To Home</Link>
+        <div className="container-fluid jumbotron show-jumbo">
 
-        <div className="cardBlock jumbotron container">
-          <p className="cardText cardTitle">{blogs}</p>
+
+          {/* <div className="cardBlock jumbotron container"> */}
+            <p className="cardText cardTitle blogTitle blog-card">{blogs}</p>
+          {/* </div> */}
+
+          {/* <ul>
+            <li>
+
+            </li>
+          </ul> */}
+
+
         </div>
-
       </div>
-
 
 
 

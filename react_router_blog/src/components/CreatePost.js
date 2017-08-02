@@ -52,29 +52,38 @@ class CreatePost extends Component {
       console.log(err, "boo!");
     });
     this.setState({blog: '', name: '', title: ''});
+    this.props.history.push('/')
   }
 
   render() {
     return (
-      <div className="container-fluid jumbotron">
+
+      <div className="container-fluid">
+        <h1 className="container-fluid latest-blog"> Create Blog </h1>
+
+        <div className="container-fluid jumbotron jumbo-form">
           <form className="form-group my-2 my-lg-0" onSubmit={this.addToList}>
             <div className="form-group col-4">
               <label htmlFor="formGroupExampleInput"> Name: </label>
-              <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Name" onChange={this.handleName} value={this.state.name}/>
+              <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Steve" onChange={this.handleName} value={this.state.name}/>
             </div>
             <div className="form-group col-4">
               <label htmlFor="formGroupExampleInput2"> Title: </label>
-              <input type="text" className="form-control" id="formGroupExampleInput2" placeholder="Title" onChange={this.handleTitle} value={this.state.title} />
+              <input type="text" className="form-control" id="formGroupExampleInput2" placeholder="omelette du fromage" onChange={this.handleTitle} value={this.state.title} />
             </div>
             <div className="form-group col-4">
-              <label htmlFor="textarea">Hog Thoughts</label>
+              <label htmlFor="textarea">Thoughts:</label>
               <textarea className="form-control" id="textarea" rows="5" onChange={this.handleBlog} value={this.state.blog}></textarea>
             </div>
             <div className="form-group col-4">
-              <input type="submit" value="submit" className="btn btn-primary btn-success" />
+              <button type="submit" className="btn btn-outline-success">submit</button>
             </div>
           </form>
+        </div>
+
       </div>
+
+
     );
   }
 
